@@ -36,7 +36,7 @@ $kinds = get_all_kinds($pdo);
         <label for="meaning" class="block text-sm font-medium text-gray-700">Meaning:</label>
         <textarea id="meaning" name="meaning" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm"></textarea>
     </div>
-    <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add Word</button>
+    <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-gradient-to-r from-blue-600 to-yellow-600">Add Word</button>
 </form>
 
 <?php include 'footer.php'; ?>

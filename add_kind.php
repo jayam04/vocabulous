@@ -43,7 +43,7 @@ $existing_kinds = $db->query($stmt);
             <label for="kind" class="block text-sm font-medium text-gray-700">New Word Kind:</label>
             <input type="text" id="kind" name="kind" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
         </div>
-        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Add Kind</button>
+        <button type="submit" class="w-full bg-blue-500 hover:bg-gradient-to-r from-blue-600 to-yellow-600 text-white font-bold py-2 px-4 rounded">Add Kind</button>
     </form>
 </div>
 

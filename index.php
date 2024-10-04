@@ -40,24 +40,24 @@ foreach ($word_stats as $stat) {
             <li>Overall Accuracy: <?php echo $accuracy; ?>%</li>
         </ul>
     </div>
-    <div class="bg-white p-4 rounded shadow">
-        <h2 class="text-xl font-semibold mb-2">Word Accuracy</h2>
-        <ul>
+    <div class="bg-white p-4 rounded shadow col-span-2 row-span-2">
+        <h2 class="text-xl font-semibold mb-2">Number of Words by Accuracy</h2>
+        <div class="flex flex-row">
             <?php $result = get_total_by_knowledge($pdo); ?>
-            <li>High: <?php echo $result['high']; ?></li>
-            <li>Average: <?php echo $result['mid']; ?></li>
-            <li>Low: <?php echo $result['low'] - $new_words; ?></li>
-        </ul>
+            <p class="m-1 text-green-600">High: <?php echo $result['high']; ?></p>
+            <p class="m-1 text-yellow-600">Average: <?php echo $result['mid']; ?></p>
+            <p class="m-1 text-red-600">Low: <?php echo $result['low'] - $new_words; ?></p>
+        </div>
+
+
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="accuracyChart"></canvas>
+        </div>
     </div>
     <div class="bg-white p-4 rounded shadow">
         <h2 class="text-xl font-semibold mb-2">Practice Session</h2>
-        <a href="practice.php" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Start Practice</a>
+        <a href="practice.php" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-gradient-to-r from-blue-600 to-yellow-600">Start Practice</a>
     </div>
-</div>
-
-
-<div class="chart-container" style="position: relative; height:40vh; width:80vw">
-    <canvas id="accuracyChart"></canvas>
 </div>
 
 <script>

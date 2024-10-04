@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-gray-100">
-    <nav class="bg-blue-600 p-4">
+    <nav class="bg-gradient-to-r from-blue-600 to-yellow-600 p-4">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.php" class="text-white text-2xl font-bold">Vocabulous</a>
             <ul class="flex space-x-4">

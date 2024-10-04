@@ -1,5 +1,5 @@
 </div>
-<footer class="bg-blue-600 text-white text-center p-4 mt-8">
+<footer class="bg-gradient-to-r from-blue-600 to-yellow-600 text-white text-center p-4 mt-8">
     <p>Made with ❤️ by <a href="https://github.com/jayam04">Jayam Patel</a> and <a href="https://chatgpt.com">ChatGPT</a></p>
 </footer>
 

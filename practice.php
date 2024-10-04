@@ -45,7 +45,7 @@ if (!$current_word) {
                 </select>
 
             </div>
-            <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>
+            <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-gradient-to-r from-blue-600 to-yellow-600">Submit</button>
         </form>
     </div>
 
