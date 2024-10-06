@@ -14,18 +14,22 @@ $practice_stats = $stmt->fetch(PDO::FETCH_ASSOC);
 $accuracy = $practice_stats['total'] > 0 ? round(($practice_stats['correct'] / $practice_stats['total']) * 100, 2) : 0;
 
 // Prepare data for the chart
-$word_stats = get_word_stats_by_date($pdo);
-
-$dates = [];
+$dates_data = [];
 $high_data = [];
 $medium_data = [];
 $low_data = [];
+$total_data = [];
 
-foreach ($word_stats as $stat) {
-    $dates[] = date('Y-m-d', strtotime($stat['practice_date']));
-    $high_data[] = $stat['high_accuracy'];
-    $medium_data[] = $stat['medium_accuracy'];
-    $low_data[] = $stat['low_accuracy'];
+$dates = get_different_practice_dates($pdo);
+
+foreach ($dates as $date) {
+    $result = get_practice_stats_by_date($pdo, $date['practice_date']);
+    
+    $dates_data[] = $date['practice_date'];
+    $high_data[] = $result[0]['high_accuracy'];
+    $medium_data[] = $result[0]['medium_accuracy'];
+    $low_data[] = $result[0]['low_accuracy'];
+    $total_data[] = $result[0]['high_accuracy'] + $result[0]['medium_accuracy'] + $result[0]['low_accuracy'];
 }
 ?>
 
@@ -65,8 +69,14 @@ foreach ($word_stats as $stat) {
     var accuracyChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: <?php echo json_encode($dates); ?>, // X-axis dates
+            labels: <?php echo json_encode($dates_data); ?>, // X-axis dates
             datasets: [{
+                    label: 'Total Words',
+                    data: <?php echo json_encode($total_data); ?>,
+                    borderColor: 'black',
+                    fill: false,
+                    tension: 0.4
+                },{
                     label: 'High Accuracy (>80%)',
                     data: <?php echo json_encode($high_data); ?>,
                     borderColor: 'green',

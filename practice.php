@@ -48,7 +48,11 @@ if (!$current_word) {
             <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-gradient-to-r from-blue-600 to-yellow-600">Submit</button>
         </form>
     </div>
-
+    
+    <script>
+        const selectElement = document.getElementById('kind');
+        selectElement.focus();
+    </script>
     <?php
 }
 include 'footer.php';
